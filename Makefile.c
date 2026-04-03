@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 19:57:03 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/03 20:10:17 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/03 20:39:43 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,38 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = 
+SRCS	= find_min_find_max_pos.c \
+		  free_stack.c \
+		  moves_1.c \
+		  moves_2.c \
+		  pa_pb.c \
+		  parsing_and_error.c \
+		  position_and_target.c \
+		  ra_rb_rr.c \
+		  rra_rrb_rrr.c \
+		  sa_sb_ss.c \
+		  sort_small.c \
+		  sort_turk.c \
+		  stack_utils.c \
+		  main.c
+		  
+OBJS	= $(SRCS:.c=.o)
 
+all:		$(NAME)
 
-// NAME = push_swap
-// CC	= cc
-// CFLAGS	= -Wall -Wextra -Werror 
-// LIBFT_PATH	= ./libft
-// LIBFT		= $(LIBFT_PATH)/libft.a
-// INC			= -I . -I ./libft
+$(NAME):	$(OBJS)
+		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+		@echo "WOWO abbiamo compilato Push_swap!!!"
 
-// SRC = main.c handle_errors.c stack_init.c stack_utils.c push.c swap.c rotate.c reverse_rotate.c sort_three.c turk_algorithm.c targets.c optimize.c costs.c
-// OBJ = $(SRC:.c=.o)
+%.o: %.c
+$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
-// all: $(LIBFT) $(NAME)
+clean:
+		rm -f $(OBJS)
 
-// $(LIBFT):
-// 	@make -C $(LIBFT_PATH)
+fclean:		clean
+		rm -f $(NAME)
 
-// $(NAME): $(OBJ)
-// 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
-// 	@echo "✅ Push_swap compilato!"
+re:		fclean all
 
-// %.o: %.c
-// 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
-
-// clean:
-// 	rm -f $(OBJ)
-// 	@make -C $(LIBFT_PATH) clean
-
-// fclean: clean
-// 	rm -f $(NAME)
-// 	@make -C $(LIBFT_PATH) fclean
-
-// re: fclean all
-
-// .PHONY: all clean fclean re
-
+.PHONY:		all clean fclean re
