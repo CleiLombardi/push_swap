@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/03/28 21:17:25 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/03 19:06:29 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	input_is_valid(char *str)
 		i++;
 	if (str[i] == '\0')
 		return (1);
-	error ();
+	ft_error ();
 }
 
 long	ft_atoi_long(char *str)
@@ -51,7 +51,7 @@ long	ft_atoi_long(char *str)
 	{
 		result = result * 10 + (str[i] - '0');
 		if (result > INT_MAX || (result * sign) < INT_MIN)
-			error ();
+			ft_error ();
 		i++;
 	}
 	return (result * sign);
@@ -69,7 +69,7 @@ int	ft_has_duplicates(int argc, char **argv)
 		while (j < argc)
 		{
 			if (ft_atoi_long (argv[i]) == ft_atoi_long(argv[j]))
-				error ();
+				ft_error ();
 			j++;
 		}
 		i++;

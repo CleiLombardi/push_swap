@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/02 18:58:28 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/03 19:17:39 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	sort_turk(t_list **stack_a, t_list **stack_b)
 	{
 		ft_set_positions(*stack_a);
 		ft_set_positions(*stack_b);
-		ft_set_target(stack_a, stack_b);
-		ft_set_moves(stack_a, count_na, ft_count_nodes(*stack_b));
+		ft_set_target(*stack_a, *stack_b);
+		ft_set_moves(*stack_a, count_na, ft_count_nodes(*stack_b));
 		ft_do_cheapest_move(stack_a, stack_b);
 		count_na--;
 	}

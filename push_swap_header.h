@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 20:09:02 by roblomba          #+#    #+#             */
-/*   Updated: 2026/03/30 21:42:18 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/03 19:33:32 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,13 @@ int		ft_find_max_pos(t_list *stack);
 int		ft_whosbigger(int a, int b);
 //free_stack.c
 void	free_stack(t_list **stack);
-//moves.c
+//moves_1.c
 int		ft_calculate_moves_to_top(int pos, int size);
 void	ft_set_moves(t_list *stack_a, int size_a, int size_b);
 t_list	*ft_find_cheapest_move(t_list *stack_a);
+void	ft_rotate_both(t_list **stack_a, t_list **stack_b, t_list *ch_node);
+void	ft_do_cheapest_move(t_list **stack_a, t_list **stack_b);
+//moves_2.c
 void	ft_do_cheapest_move(t_list **stack_a, t_list **stack_b);
 //pa_pb.c
 void	pa(t_list **stack_a, t_list **stack_b);
@@ -64,9 +67,11 @@ void	ss(t_list **stack_a, t_list **stack_b);
 //sort_small.c
 void	ft_sort_three(t_list **stack);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
-//stack_utils.c
+//sort_turk.c
+void	ft_push_back_to_a(t_list **stack_a, t_list **stack_b);
+void	sort_turk(t_list **stack_a, t_list **stack_b);
+//stack_nodes_utils.c
 t_list	*ft_new_node(int value);
 void	ft_node_to_bottom(t_list **lst, t_list *new_node);
 int		ft_count_nodes(t_list *stack);
-
 #endif

@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/02 19:49:14 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/03 19:26:01 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_list	*ft_find_cheapest_move(t_list *stack_a)
 	return (cheapest_node);
 }
 
-static void	ft_rotate_both(t_list **stack_a, t_list **stack_b, t_list *ch_node)
+void	ft_rotate_both(t_list **stack_a, t_list **stack_b, t_list *ch_node)
 {
 	int	size_a;
 	int	size_b;
@@ -69,23 +69,19 @@ static void	ft_rotate_both(t_list **stack_a, t_list **stack_b, t_list *ch_node)
 
 	size_a = ft_count_nodes(*stack_a);
 	size_b = ft_count_nodes(*stack_b);
-	if (ch_node->pos <= size_a / 2 && ch_node->target_pos <= size_b / 2)
+	moves_a = ch_node->pos;
+	moves_b = ch_node->target_pos;
+	if (moves_a <= size_a / 2 && moves_b <= size_b / 2)
 	{
-		moves_a = ch_node->pos;
-		moves_b = ch_node->target_pos;
 		while (moves_a-- > 0 && moves_b-- > 0)
-			rr(stack_a, stack_b);
+			rr(stack_a, stack_b);		
 	}
 	else if (moves_a > size_a / 2 && moves_b > size_b / 2)
 	{
-		moves_a = size_a - ch_node->pos;
-		moves_b = size_b - ch_node->target_pos;
-		while (moves_a > 0 && moves_b > 0)
-		{
+		moves_a = size_a - moves_a;
+		moves_b = size_b - moves_b;
+		while (moves_a > 0 && moves_b-- > 0)
 			rrr(stack_a, stack_b);
-			moves_a--;
-			moves_b--;
-		}
 	}
 }
 
