@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 20:09:02 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/03 19:33:32 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/03 22:25:43 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ft_rotate_both(t_list **stack_a, t_list **stack_b, t_list *ch_node);
 void	ft_do_cheapest_move(t_list **stack_a, t_list **stack_b);
 //moves_2.c
 void	ft_do_cheapest_move(t_list **stack_a, t_list **stack_b);
+void	ft_rotate_min_to_top(t_list **stack_a);
 //pa_pb.c
 void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);

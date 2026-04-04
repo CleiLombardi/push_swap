@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/03 19:17:39 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/03 22:15:46 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	sort_turk(t_list **stack_a, t_list **stack_b)
 	}
 	ft_sort_three(stack_a);
 	while (*stack_b != NULL)
+	{
 		ft_push_back_to_a(stack_a, stack_b);
+	}
 	ft_rotate_min_to_top(stack_a);
 }

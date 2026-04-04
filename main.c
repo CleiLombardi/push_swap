@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/03 19:44:11 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/03 20:52:14 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int	main(int argc, char **argv)
 		input_is_valid(argv[i]);
 		new_node = ft_new_node (ft_atoi_long(argv[i]));
 		if (!new_node)
-			free_stack (&stack_a);
-			return (1)
+			return (free_stack(&stack_a), 1);
 		ft_node_to_bottom (&stack_a, new_node);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/03 19:06:29 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/03 22:25:54 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,16 @@ int	input_is_valid(char *str)
 	int	i;
 
 	i = 0;
-	if (!str || str[0] == '\0')
-		return (0);
 	if (str[i] == '+' || str[i] == '-' )
 		i++;
 	if (str[i] == '\0')
-		error ();
+		ft_error ();
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] == '\0')
 		return (1);
 	ft_error ();
+	return (0);
 }
 
 long	ft_atoi_long(char *str)
