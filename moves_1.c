@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/03 22:33:47 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/04 16:05:11 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,9 @@ void	ft_rotate_both(t_list **stack_a, t_list **stack_b, t_list *ch_node)
 		moves_a = size_a - moves_a;
 		moves_b = size_b - moves_b;
 		while (moves_a > 0 && moves_b-- > 0)
+		{
 			rrr(stack_a, stack_b);
+			moves_a--;
+		}
 	}
 }
