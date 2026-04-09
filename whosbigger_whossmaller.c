@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   whosbigger_whossmaller.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/09 20:43:18 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/09 20:38:24 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_header.h"
 
-int	main(int argc, char **argv)
+int	ft_whosbigger(int a, int b)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	if (a > b)
+		return (a);
+	return (b);
+}
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc < 2)
-		return (0);
-	if (ft_create_stack(&stack_a, argc, argv) == 1)
-		return (1);
-	ft_has_duplicates(argc, argv);
-	if (ft_count_nodes(stack_a) > 1 && !ft_is_sorted(stack_a))
-	{
-		if (ft_count_nodes(stack_a) == 2)
-			sa(&stack_a);
-		else if (ft_count_nodes(stack_a) == 3)
-			ft_sort_three(&stack_a);
-		else if (ft_count_nodes(stack_a) <= 5)
-			ft_sort_five(&stack_a, &stack_b);
-		else
-			sort_turk(&stack_a, &stack_b);
-	}
-	free_stack(&stack_a);
-	free_stack(&stack_b);
-	return (0);
+int	ft_whossmaller(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
 }

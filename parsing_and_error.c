@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/03 22:25:54 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/09 20:37:18 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ long	ft_atoi_long(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
-		if (result > INT_MAX || (result * sign) < INT_MIN)
+		if ((result * sign) > INT_MAX || (result * sign) < INT_MIN)
 			ft_error ();
 		i++;
 	}
@@ -80,4 +80,17 @@ void	ft_error(void)
 {
 	write (2, "Error\n", 6);
 	exit (1);
+}
+
+int	ft_is_sorted(t_list *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack->next != NULL)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/02 18:51:02 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/09 20:37:50 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,4 @@ int	ft_find_max_pos(t_list *stack)
 		stack = stack->next;
 	}
 	return (max_pos);
-}
-
-int	ft_whosbigger(int a, int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
 }
