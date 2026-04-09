@@ -6,7 +6,7 @@
 /*   By: roblomba <roblomba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 21:02:58 by roblomba          #+#    #+#             */
-/*   Updated: 2026/04/04 16:01:50 by roblomba         ###   ########.fr       */
+/*   Updated: 2026/04/04 16:27:11 by roblomba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,15 @@ int	main(int argc, char **argv)
 		ft_node_to_bottom (&stack_a, new_node);
 		i++;
 	}
-	if (ft_count_nodes(&stack_a) > 1)
-		sort_turk(&stack_a, &stack_b);
+	if (ft_count_nodes(stack_a) > 1 && !ft_is_sorted(stack_a))
+	{
+		if (ft_count_nodes(stack_a) == 2)
+			sa(&stack_a);
+		else if (ft_count_nodes(stack_a) == 3)
+			ft_sort_three(&stack_a);
+		else
+			sort_turk(&stack_a, &stack_b);
+	}
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
